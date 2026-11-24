@@ -1,7 +1,19 @@
-﻿target/
+﻿# Build & Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IDEs & OS
 .idea/
 *.iml
+*.ipr
+*.iws
 .DS_Store
+Thumbs.db
+
+# Local environment & secrets
+.env
+
+# Test artifacts & diagnostics
 artifacts/
 screenshots/
 logs/
