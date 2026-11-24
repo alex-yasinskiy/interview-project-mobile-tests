@@ -1,6 +1,7 @@
 package com.zipo.tests.extension;
 
 import com.zipo.tests.config.FrameworkConfig;
+import com.zipo.tests.diagnostics.FailureAiAnalyzer;
 import com.zipo.tests.driver.DriverManager;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.InteractsWithApps;
@@ -106,6 +107,8 @@ public class MobileTestExtension implements
             if (cause != null) {
                 System.err.println("[Diagnostics] Failure reason: " + cause);
             }
+
+            FailureAiAnalyzer.analyzeAndSave(testId, outputDir);
         } catch (IOException e) {
             System.err.println("[Diagnostics] Failed to write failure artifacts: " + e.getMessage());
         } finally {
